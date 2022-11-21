@@ -6,9 +6,10 @@
 - Java
 - SpringBoot
 - JPA
-- mySQL
+- mariaDB
+- Spring-Security
 
-### 아키텍처
+### ERD
 - 추후 업로드 예정
 
 ## 정책
