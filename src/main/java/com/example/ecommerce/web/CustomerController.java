@@ -1,10 +1,11 @@
 package com.example.ecommerce.web;
 
-import com.example.ecommerce.global.SuccessResponse;
+import com.example.ecommerce.domain.dto.SignupResponse;
 import com.example.ecommerce.service.CustomerService;
-import com.example.ecommerce.web.dto.SignupRequest;
+import com.example.ecommerce.domain.dto.SignupRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,14 +14,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/customer")
 public class CustomerController {
     private final CustomerService customerService;
-    @GetMapping("")
-    public String Hello() {
-        return "Hello world";
-    }
 
     @PostMapping("/sign-up")
-    public SuccessResponse signup(@Validated @RequestBody SignupRequest request) {
-        customerService.signup(request);
-        return SuccessResponse.sendWithoutObject(HttpStatus.CREATED, "회원가입 완료");
+    @ResponseStatus(HttpStatus.CREATED)
+    public ResponseEntity<SignupResponse> signup(@Validated @RequestBody SignupRequest request) {
+        SignupResponse signupResponse = customerService.signup(request);
+        return ResponseEntity.status(HttpStatus.CREATED).body(signupResponse);
     }
 }

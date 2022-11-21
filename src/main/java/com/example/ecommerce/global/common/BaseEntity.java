@@ -1,4 +1,4 @@
-package com.example.ecommerce.domain;
+package com.example.ecommerce.global.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

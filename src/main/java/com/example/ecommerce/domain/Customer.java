@@ -1,7 +1,8 @@
 package com.example.ecommerce.domain;
 
 
-import com.example.ecommerce.web.dto.SignupRequest;
+import com.example.ecommerce.domain.dto.SignupRequest;
+import com.example.ecommerce.global.common.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -17,7 +18,7 @@ import javax.persistence.OneToOne;
 @AllArgsConstructor
 @Builder
 @Entity
-public class Customer extends BaseEntity{
+public class Customer extends BaseEntity {
     @Column(nullable = false)
     private String name;
     @Column(nullable = false)

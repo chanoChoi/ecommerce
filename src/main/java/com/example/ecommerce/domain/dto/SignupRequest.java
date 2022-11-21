@@ -1,7 +1,8 @@
-package com.example.ecommerce.web.dto;
+package com.example.ecommerce.domain.dto;
 
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -10,6 +11,7 @@ import javax.validation.constraints.Pattern;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class SignupRequest {
     @NotNull
     private String name;

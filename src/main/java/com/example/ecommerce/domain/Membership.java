@@ -1,6 +1,6 @@
 package com.example.ecommerce.domain;
 
-import com.example.ecommerce.type.MembershipEnum;
+import com.example.ecommerce.domain.type.MembershipEnum;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -8,7 +8,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-import static com.example.ecommerce.type.MembershipEnum.MEMBER;
+import static com.example.ecommerce.domain.type.MembershipEnum.MEMBER;
 
 @Getter
 @AllArgsConstructor
