@@ -1,8 +1,8 @@
 package com.example.ecommerce.web;
 
-import com.example.ecommerce.domain.dto.SignupResponse;
+import com.example.ecommerce.domain.dto.SignupResponseDto;
 import com.example.ecommerce.service.CustomerService;
-import com.example.ecommerce.domain.dto.SignupRequest;
+import com.example.ecommerce.domain.dto.SignupRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,9 +16,8 @@ public class CustomerController {
     private final CustomerService customerService;
 
     @PostMapping("/sign-up")
-    @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<SignupResponse> signup(@Validated @RequestBody SignupRequest request) {
-        SignupResponse signupResponse = customerService.signup(request);
+    public ResponseEntity<SignupResponseDto> signup(@Validated @RequestBody SignupRequestDto request) {
+        SignupResponseDto signupResponse = customerService.signup(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(signupResponse);
     }
 }

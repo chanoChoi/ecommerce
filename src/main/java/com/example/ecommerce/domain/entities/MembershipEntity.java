@@ -1,4 +1,4 @@
-package com.example.ecommerce.domain;
+package com.example.ecommerce.domain.entities;
 
 import com.example.ecommerce.domain.type.MembershipEnum;
 import lombok.*;
@@ -15,7 +15,8 @@ import static com.example.ecommerce.domain.type.MembershipEnum.MEMBER;
 @NoArgsConstructor
 @Builder
 @Entity
-public class Membership {
+@Table(name = "membership")
+public class MembershipEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -27,8 +28,8 @@ public class Membership {
     @LastModifiedDate
     private LocalDateTime updatedAt;
 
-    public static Membership makeDefaultMember() {
-        return Membership.builder()
+    public static MembershipEntity makeDefaultMember() {
+        return MembershipEntity.builder()
                 .membershipType(MEMBER)
                 .build();
     }
